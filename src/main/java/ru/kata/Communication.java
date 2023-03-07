@@ -14,7 +14,7 @@ import java.util.List;
 public class Communication {
 
     private final RestTemplate restTemplate;
-    private final String URL = "http://94.198.50.185:7081/api/users";
+    private final String URL = "http://94.198.50.185:7081/api/users/";
 
 
     @Autowired
@@ -32,7 +32,7 @@ public class Communication {
 
     public String save(User user) {
         HttpHeaders headers = new HttpHeaders();
-        headers.set("cookie", getAllUsers());
+        headers.add("cookie", getAllUsers());
         HttpEntity<User> requestEntity = new HttpEntity<>(user, headers);
         return restTemplate.exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody();
 
