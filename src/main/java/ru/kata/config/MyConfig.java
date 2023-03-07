@@ -1,0 +1,19 @@
+package ru.kata.config;
+
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpHeaders;
+import org.springframework.web.client.RestTemplate;
+
+@Configuration
+@ComponentScan("ru.kata")
+public class MyConfig {
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+}
