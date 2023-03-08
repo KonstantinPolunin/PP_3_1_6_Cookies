@@ -11,10 +11,10 @@ public class App
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         Communication communication = context.getBean("communication", Communication.class);
 
-        System.out.println(communication.getAllUsers());
-        System.out.println(communication.save(new User(3L, "James", "Brown", (byte) 26)));
-        System.out.println(communication.update(new User(3L, "Thomas", "Shelby", (byte) 26)));
-        System.out.println(communication.delete(3L));
+
+        System.out.println(communication.save(new User(3L, "James", "Brown", (byte) 26)) +
+                communication.update(new User(3L, "Thomas", "Shelby", (byte) 26)) + communication.delete(3L));
+
 
 
     }
